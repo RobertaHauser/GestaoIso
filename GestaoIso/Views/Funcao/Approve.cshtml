@@ -1,0 +1,132 @@
+﻿@model GestaoIso.Data.Funcao
+
+@{
+    ViewData["Title"] = "Approve";
+}
+
+<h1>Cadastro de Função</h1>
+
+
+
+<h4>Funcao</h4>
+<hr />
+<dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Experiencia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Experiencia)
+        </dd>
+        <dt class = "col-sm-2">Educação</dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DominioEducacao.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Treinamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Treinamento)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CadastroResp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CadastroResp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CadastroData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CadastroData)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RevisaoResp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RevisaoResp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RevisaoData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RevisaoData)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AprovacaoResp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AprovacaoResp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AprovacaoData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AprovacaoData)
+        </dd>
+</dl>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Approve">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FuncaoId" />
+            <input type="hidden" asp-for="Cargo" />
+            <input type="hidden" asp-for="Experiencia" />
+            <input type="hidden" asp-for="DominioEducacao.Descricao" />
+            
+            <input type="hidden" asp-for="Treinamento" />
+
+            <input type="hidden" asp-for="CadastroData" />
+            <input type="hidden" asp-for="CadastroResp" />
+            
+            <input type="hidden" asp-for="Status" />
+
+            <input type="hidden" asp-for="RevisaoData" />
+            <input type="hidden" asp-for="RevisaoResp" />
+
+            <input type="hidden" asp-for="AprovacaoData" />
+            <input type="hidden" asp-for="AprovacaoResp" />
+            
+            <input type="hidden" asp-for="DominioIdEducacao" />
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AprovacaoStatus" /> @Html.DisplayNameFor(model => model.AprovacaoStatus)
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Comentario" class="control-label"></label>
+                <textarea asp-for="Comentario" class="form-control"></textarea>
+                <span asp-validation-for="Comentario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.FuncaoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

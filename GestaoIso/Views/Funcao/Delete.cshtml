@@ -1,0 +1,95 @@
+﻿@model GestaoIso.Data.Funcao
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Funcao</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Experiencia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Experiencia)
+        </dd>
+        <dt class = "col-sm-2">Educação</dt>
+        <dd class = "col-sm-10">@Html.DisplayFor(model => model.DominioEducacao.Descricao)</dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Treinamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Treinamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CadastroResp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CadastroResp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CadastroData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CadastroData)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RevisaoResp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RevisaoResp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RevisaoData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RevisaoData)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AprovacaoStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AprovacaoStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AprovacaoResp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AprovacaoResp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AprovacaoData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AprovacaoData)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FuncaoId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

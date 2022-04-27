@@ -1,0 +1,92 @@
+﻿@model GestaoIso.Data.Funcao
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Funcao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FuncaoId" />
+            
+            <input type="hidden" asp-for="CadastroData" />
+            <input type="hidden" asp-for="CadastroResp" />
+            
+            <input type="hidden" asp-for="Status" />
+
+            <input type="hidden" asp-for="RevisaoData" />
+            <input type="hidden" asp-for="RevisaoResp" />
+
+
+            <div class="form-group">
+                <label asp-for="Cargo" class="control-label"></label>
+                <input asp-for="Cargo" class="form-control" />
+                <span asp-validation-for="Cargo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experiencia" class="control-label"></label>
+                <input asp-for="Experiencia" class="form-control" />
+                <span asp-validation-for="Experiencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DominioIdEducacao" class="control-label"></label>
+                <select asp-for="DominioIdEducacao" class="form-control" asp-items="ViewBag.DominioIdEducacao"></select>
+                <span asp-validation-for="DominioIdEducacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treinamento" class="control-label"></label>
+                <input asp-for="Treinamento" class="form-control" />
+                <span asp-validation-for="Treinamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CadastroResp" class="control-label"></label>
+                @Html.DisplayFor(model => model.CadastroResp)
+            </div>
+            <div class="form-group">
+                <label asp-for="CadastroData" class="control-label"></label>
+                @Html.DisplayFor(model => model.CadastroData)
+            </div>
+            <div class="form-group">
+                <label asp-for="RevisaoResp" class="control-label"></label>
+                @Html.DisplayFor(model => model.RevisaoResp)
+            </div>
+            <div class="form-group">
+                <label asp-for="RevisaoData" class="control-label"></label>
+                @Html.DisplayFor(model => model.RevisaoData)
+            </div>
+            <div class="form-group">
+                <label asp-for="AprovacaoResp" class="control-label"></label>
+                @Html.DisplayFor(model => model.AprovacaoResp)
+            </div>
+            <div class="form-group">
+                <label asp-for="AprovacaoData" class="control-label"></label>
+                @Html.DisplayFor(model => model.AprovacaoData)
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                @Html.DisplayFor(model => model.Status)
+            </div>
+            <div class="form-group">
+                <label asp-for="Comentario" class="control-label"></label>
+                <textarea asp-for="Comentario" class="form-control"></textarea>
+                <span asp-validation-for="Comentario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
